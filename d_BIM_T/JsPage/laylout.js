@@ -116,6 +116,47 @@ var Home_Layout = {
                     });
                     $("#aCrs").append(CrsContent);
                 }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let data = LSMS_Poster_GetComparisonList;
+                if (data.ErrorMessage != "") {
+                } else if (data.ItemList.length > 0) {
+                    $.each(data.ItemList, function (index, obj) {
+                        var PsURL;
+                        var coursesOther = obj.CompareName;
+                        if (coursesOther == '智慧資通訊') {
+                            PsURL = 'd_ICT';
+                        } else if (coursesOther == '智慧機械') {
+                            PsURL = 'd_SMA';
+                        } else if (coursesOther == '生技醫藥') {
+                            PsURL = 'd_BIM';
+                        } else if (coursesOther == '智慧電網與綠能') {
+                            PsURL = 'd_SGE';
+                        } else if (coursesOther == '淨零永續') {
+                            PsURL = 'd_NZS';
+                        } else if (coursesOther == '科技管理') {
+                            PsURL = 'd_TEM';
+                        } else if (coursesOther == '其他') {
+                            PsURL = '/Home/LessonList';
+                        }
+                        if (coursesOther == '其他') {
+                            CrsContent += '\
+                            <div class="nav flex-column col-6">\
+                                <div class="nav-item">\
+                                    <a class="nav-link" href="'+ webURL + '/' + PsURL + '" title="所有課程">所有課程</a> \
+                                </div>\
+                            </div>';
+                        } else {
+                            CrsContent += '\
+                            <div class="nav flex-column col-6">\
+                                <div class="nav-item">\
+                                    <a class="nav-link" href="'+ webURL + '/' + PsURL + '" title="' + obj.CompareName + ' ">' + obj.CompareName + '</a> \
+                                </div>\
+                            </div>';
+                        }
+                    });
+                    $("#aCrs").append(CrsContent);
+                }
             }
         });
 

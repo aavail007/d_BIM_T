@@ -152,6 +152,24 @@ var DefaultPage = {
                     $('#card-tab-1').addClass('active');
                     FolderGuid = $('#card-tab-1').attr('folderguid');
                 }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let data = LSMS_Poster_GetSubComparison;
+                if (data.ErrorMessage != "") {
+                } else if (data.ItemList.length > 0) {
+                    var tablist = '';
+                    $.each(data.ItemList, function (index, obj) {
+                        index = index + 1;
+                        tablist += '\
+                    <li class="nav-item">\
+                        <a class="nav-link" id="card-tab-'+ index + '" data-toggle="tab" href="#" role="tab" aria-controls="card-' + index + '" aria-selected="false" folderguid="' + obj.FolderGUID + '">' + obj.SubCompareName + '</a>\
+                    </li>';
+                    });
+                    $('#cardTab').empty();
+                    $('#cardTab').append(tablist);
+                    $('#card-tab-1').addClass('active');
+                    FolderGuid = $('#card-tab-1').attr('folderguid');
+                }
             }
         });
         //領域子分類
