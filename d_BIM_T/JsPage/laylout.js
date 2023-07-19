@@ -70,8 +70,10 @@ var Home_Layout = {
             ]
         };
         $.ajax({
-            type: "POST",
-            url: webURL + "/api/LSM01_ByGet",
+            // type: "POST", // TODO:開發註解
+            // url: webURL + "/api/LSM01_ByGet", // TODO:開發註解
+            type: "GET",
+            url: webURL2 + "fakeData/subComparison.json",
             contentType: "application/json",
             dataType: "json",
             data: JSON.stringify(inParam),
@@ -1125,8 +1127,10 @@ var Home_Layout = {
             ]
         };
         $.ajax({
-            type: "POST",
-            url: webURL + "/api/LSM01_ByGet",
+            // type: "POST", // TODO:開發註解
+            // url: webURL + "/api/LSM01_ByGet", // TODO:開發註解
+            type: "GET",
+            url: webURL2 + "fakeData/subComparison.json",
             contentType: "application/json",
             dataType: "json",
             data: JSON.stringify(inParam),
@@ -1153,8 +1157,10 @@ var Home_Layout = {
             "_": BaseFunction.NowDateTimeCache()//cache 10分鐘
         };
         $.ajax({
+            // type: "GET", // TODO:開發註解
+            // url: webURL + "/api/TM_CMS_Keyword_GetList?" + $.param(p2), // TODO:開發註解
             type: "GET",
-            url: webURL + "/api/TM_CMS_Keyword_GetList?" + $.param(p2),
+            url: webURL2 + "fakeData/TM_CMS_Keyword_GetList.json",
             contentType: "application/json",
             dataType: "json",
             async: true,//非同步

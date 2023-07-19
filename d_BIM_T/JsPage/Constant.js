@@ -76,7 +76,9 @@ var notifySMSSendCode = 3;
 
 /*----- 子網站操作代碼------*/
 //生技醫藥BIM
-var webURL = 'https://intertest5.itri.org.tw/collegeone/'; //主站網址
+// var webURL = 'https://intertest5.itri.org.tw/collegeone/'; //主站網址
+var webURL = 'https://college.itri.org.tw/'; //TODO: 暫時替換
+var webURL2 = 'http://127.0.0.1:5500/'; // TODO: 暫時換本機
 var langCode = 'TW';//語系:預設空值
 var storyCode = 'H002';
 var FoldType = 'BIM';

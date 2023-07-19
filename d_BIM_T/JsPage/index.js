@@ -129,32 +129,16 @@ var DefaultPage = {
             ]
         };
         $.ajax({
-            type: "POST",
-            url: webURL + "/api/LSM01_ByGet",
+            // type: "POST", // TODO:開發註解
+            // url: webURL + "/api/LSM01_ByGet", // TODO:開發註解
+            type: "GET",
+            url: webURL2 + "fakeData/subComparison.json",
             contentType: "application/json",
             dataType: "json",
             data: JSON.stringify(inParam),
             async: false,
             cache: false,
             success: function (data) {
-                if (data.ErrorMessage != "") {
-                } else if (data.ItemList.length > 0) {
-                    var tablist = '';
-                    $.each(data.ItemList, function (index, obj) {
-                        index = index + 1;
-                        tablist += '\
-                    <li class="nav-item">\
-                        <a class="nav-link" id="card-tab-'+ index + '" data-toggle="tab" href="#" role="tab" aria-controls="card-' + index + '" aria-selected="false" folderguid="' + obj.FolderGUID + '">' + obj.SubCompareName + '</a>\
-                    </li>';
-                    });
-                    $('#cardTab').empty();
-                    $('#cardTab').append(tablist);
-                    $('#card-tab-1').addClass('active');
-                    FolderGuid = $('#card-tab-1').attr('folderguid');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                let data = LSMS_Poster_GetSubComparison;
                 if (data.ErrorMessage != "") {
                 } else if (data.ItemList.length > 0) {
                     var tablist = '';
@@ -200,7 +184,8 @@ var DefaultPage = {
 
         $.ajax({
             type: "GET",
-            url: webURL + "/api/TM_CMS_Info_GetList?" + $.param(p),
+            // url: webURL + "/api/TM_CMS_Info_GetList?" + $.param(p), // TODO:開發註解
+            url: webURL2 + "fakeData/TM_CMS_Info_GetList.json",//本機開發用
             contentType: "application/json",
             dataType: "json",
             async: false,
@@ -291,7 +276,8 @@ var DefaultPage = {
 
         $.ajax({
             type: "GET",
-            url: webURL + "/api/TM_CMS_Info_GetList?" + $.param(p2),
+            // url: webURL + "/api/TM_CMS_Info_GetList?" + $.param(p2), // TODO:開發註解
+            url: webURL2 + "fakeData/TM_CMS_Info_GetList.json",//本機開發用
             contentType: "application/json",
             dataType: "json",
             async: false,
@@ -399,8 +385,10 @@ var DefaultPage = {
             "GetAttributeList": "N"
         };
         $.ajax({
-            type: "POST",
-            url: webURL + "/api/COL06_GetWithHolidayA",
+            // type: "POST", // TODO:開發註解
+            // url: webURL + "/api/COL06_GetWithHolidayA", // TODO:開發註解
+            type: "GET",
+            url: webURL2 + "fakeData/COL06_GetWithHolidayA.json",//本機開發用
             contentType: "application/json",
             dataType: "json",
             data: JSON.stringify(inParam),
@@ -593,11 +581,11 @@ var DefaultPage = {
             "GetAttributeList": "N"
         };
         $.ajax({
-            type: "POST",
+            // type: "POST", // TODO:開發註解
             //url: webURL + "/api/COL63_GetFeature",
-			url: webURL + "/api/COL65_GetFeatureMenu?" + $.param(p),
-            //type: "GET",//本機開發用
-            //url: webURL + "product.json",//本機開發用
+			// url: webURL + "/api/COL65_GetFeatureMenu?" + $.param(p), // TODO:開發註解
+            type: "GET",//本機開發用
+            url: webURL2 + "fakeData/product.json",//本機開發用
             contentType: "application/json",
             dataType: "json",
             //data: JSON.stringify(inParam),
@@ -621,7 +609,8 @@ var DefaultPage = {
                         };
                         $.ajax({
                             type: "GET",
-                            url: webURL + "/api/TM_Course_Favority_GetOne?" + $.param(p),
+                            // url: webURL + "/api/TM_Course_Favority_GetOne?" + $.param(p), // TODO:開發註解
+                            url: webURL2 + "fakeData/favority.json",//本機開發用
                             contentType: "application/json",
                             dataType: "json",
                             async: false,
@@ -668,10 +657,10 @@ var DefaultPage = {
                             "GetAttributeList": "N"
                         };
                         $.ajax({
-                            type: "POST",
-                            url: webURL + "/api/COL63_GetFeature",
-                            //type: "GET",//本機開發用
-                            //url: webURL + "product.json",//本機開發用
+                            // type: "POST", // TODO:開發註解
+                            // url: webURL + "/api/COL63_GetFeature", // TODO:開發註解
+                            type: "GET",//本機開發用
+                            url: webURL2 + "fakeData/COL63_GetFeature.json",//本機開發用
                             contentType: "application/json",
                             dataType: "json",
                             data: JSON.stringify(inParam),
