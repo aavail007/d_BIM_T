@@ -1,5 +1,6 @@
 ////002
 $(document).ready(function () {
+    sessionStorage.setItem("homemenulist2", fakeMenuList);// TODO:本機開發塞 menu 資料
     Home_Layout.BindUI();
     Home_Layout.BindEvent();
     Home_Layout.BindData();
@@ -73,54 +74,13 @@ var Home_Layout = {
             // type: "POST", // TODO:開發註解
             // url: webURL + "/api/LSM01_ByGet", // TODO:開發註解
             type: "GET",
-            url: webURL2 + "fakeData/subComparison.json",
+            url: webURL2 + "fakeData/comparisonList.json",
             contentType: "application/json",
             dataType: "json",
             data: JSON.stringify(inParam),
             async: false,
             cache: false,
             success: function (data) {
-                if (data.ErrorMessage != "") {
-                } else if (data.ItemList.length > 0) {
-                    $.each(data.ItemList, function (index, obj) {
-                        var PsURL;
-                        var coursesOther = obj.CompareName;
-                        if (coursesOther == '智慧資通訊') {
-                            PsURL = 'd_ICT';
-                        } else if (coursesOther == '智慧機械') {
-                            PsURL = 'd_SMA';
-                        } else if (coursesOther == '生技醫藥') {
-                            PsURL = 'd_BIM';
-                        } else if (coursesOther == '智慧電網與綠能') {
-                            PsURL = 'd_SGE';
-                        } else if (coursesOther == '淨零永續') {
-                            PsURL = 'd_NZS';
-                        } else if (coursesOther == '科技管理') {
-                            PsURL = 'd_TEM';
-                        } else if (coursesOther == '其他') {
-                            PsURL = '/Home/LessonList';
-                        }
-                        if (coursesOther == '其他') {
-                            CrsContent += '\
-                            <div class="nav flex-column col-6">\
-                                <div class="nav-item">\
-                                    <a class="nav-link" href="'+ webURL + '/' + PsURL + '" title="所有課程">所有課程</a> \
-                                </div>\
-                            </div>';
-                        } else {
-                            CrsContent += '\
-                            <div class="nav flex-column col-6">\
-                                <div class="nav-item">\
-                                    <a class="nav-link" href="'+ webURL + '/' + PsURL + '" title="' + obj.CompareName + ' ">' + obj.CompareName + '</a> \
-                                </div>\
-                            </div>';
-                        }
-                    });
-                    $("#aCrs").append(CrsContent);
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                let data = LSMS_Poster_GetComparisonList;
                 if (data.ErrorMessage != "") {
                 } else if (data.ItemList.length > 0) {
                     $.each(data.ItemList, function (index, obj) {

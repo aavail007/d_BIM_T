@@ -185,7 +185,7 @@ var DefaultPage = {
         $.ajax({
             type: "GET",
             // url: webURL + "/api/TM_CMS_Info_GetList?" + $.param(p), // TODO:開發註解
-            url: webURL2 + "fakeData/TM_CMS_Info_GetList.json",//本機開發用
+            url: webURL2 + "fakeData/furtherReading.json",//本機開發用
             contentType: "application/json",
             dataType: "json",
             async: false,
