@@ -452,6 +452,14 @@ p.video-container {
     color: #02afbb;
 }
 
+/* 調整學習推薦高度不一 */
+.recommend-card {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /* 調整 menu bar Input 寬度 */
 @media (max-width: 1560px) {
     .input_box input {

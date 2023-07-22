@@ -2340,9 +2340,12 @@ div.dataTables_wrapper div.dataTables_info {
   padding: 0px 1.4rem;
   font-size: 1.3rem !important;
 }
-#ITRI_topbar .topnav .navbar-nav .nav-link:hover {
-  color: #02afb8 !important;
-  background: #fff;
+
+@media (any-hover:hover) {/*行動裝置不支援 hover 效果*/ 
+    #ITRI_topbar .topnav .navbar-nav .nav-link:hover {
+      color: #02afb8 !important;
+      background: #fff;
+    }
 }
 #ITRI_topbar .topnav .navbar-nav .nav-item .nav-link {
   font-size: 1rem;
@@ -2593,7 +2596,7 @@ div.dataTables_wrapper div.dataTables_info {
     padding: 0 1rem;
   }
   #logo_width {
-    width: 80%;
+    width: 65%;
   }
   #ITRI_topbar.topnav-navbar .topnav-logo {
     margin-left: 0.5rem !important;
