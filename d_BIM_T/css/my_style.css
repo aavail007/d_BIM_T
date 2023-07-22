@@ -179,7 +179,7 @@ p.video-container {
 #ITRI_topbar .topnav .navbar-nav .nav-item .nav-link {
     font-size: 1rem;
     position: relative;
-    padding: 1rem 1.3rem !important;
+    padding: 1rem !important;
 }
 @media (min-width: 1200px) {
     #ITRI_topbar .navbar-expand-xl .navbar-nav {
@@ -231,13 +231,27 @@ p.video-container {
         border-radius: 0 0 0.25rem 0.25rem;
         min-width: calc(10rem + 1.5rem);
         font-size: calc(0.9rem - 0.01rem);
-        /*width:max-content;*/
     }
 
     #ITRI_topbar .dropdown-menu.show {
         width: 100%;
         margin-top: 5px;
         display: block !important;
+    }
+}
+
+@media (max-width: 1366px) {
+    #ITRI_topbar .topnav .dropdown {
+        position: initial;
+    }
+    #ITRI_topbar .topnav .dropdown .dropdown-menu {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 991px) {
+    #ITRI_topbar .topnav .dropdown .dropdown-menu {
+        width: auto;
     }
 }
 /*#ITRI_topbar .navbar .dropdown-menu {
@@ -271,6 +285,7 @@ p.video-container {
     position: absolute;
     right: 5px;
     display: inline-block;
+    padding-left: 5px;
 }
 #ITRI_topbar .arrow-down:after {
     right: 0 !important;
@@ -311,11 +326,7 @@ p.video-container {
             position: absolute;
         }
         #ITRI_topbar .topnav .arrow-down::after {
-            right: -13px !important;
-            position: absolute;
-        }
-        #ITRI_topbar .topnav .arrow-down::after {
-            right: -13px !important;
+            right: -0px !important;
             position: absolute;
         }
        #ITRI_topbar .topnav .arrow-down::after {
@@ -359,6 +370,10 @@ p.video-container {
             height: auto;
             overflow: scroll;
             padding: 0 15px !important;
+        }
+
+        .navbar .dropdown-menu.show .bid_menu {
+            overflow-x: hidden;
         }
     }
 
@@ -435,4 +450,20 @@ p.video-container {
     text-align: right;
     line-height: 0px;
     color: #02afbb;
+}
+
+/* 調整 menu bar Input 寬度 */
+@media (max-width: 1560px) {
+    .input_box input {
+        width: 15rem;
+    }
+
+    #ITRI_topbar .topnav .navbar-nav .nav-link {
+        font-size: 1.1rem !important;
+        
+    }
+    
+    #ITRI_topbar .topnav .navbar-nav .nav-item .nav-link.arrow-none   {
+        padding: 0px 1.1rem !important;
+    }
 }
