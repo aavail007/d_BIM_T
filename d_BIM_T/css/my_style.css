@@ -213,7 +213,7 @@ p.video-container {
     display: block;
 }
 #ITRI_topbar .dropdown-menu-animated.show {
-    top: 100% !important;
+    top: 0px !important;
     /*width: max-content;*/
 }
 .bid_menu {
@@ -237,6 +237,12 @@ p.video-container {
         width: 100%;
         margin-top: 5px;
         display: block !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #ITRI_topbar .navbar .dropdown-menu {
+        position: relative;
     }
 }
 
@@ -371,10 +377,6 @@ p.video-container {
             overflow: scroll;
             padding: 0 15px !important;
         }
-
-        .navbar .dropdown-menu.show .bid_menu {
-            overflow-x: hidden;
-        }
     }
 
     .topnav-navbar .navbar-toggle span {
@@ -458,20 +460,4 @@ p.video-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-/* 調整 menu bar Input 寬度 */
-@media (max-width: 1560px) {
-    .input_box input {
-        width: 15rem;
-    }
-
-    #ITRI_topbar .topnav .navbar-nav .nav-link {
-        font-size: 1.1rem !important;
-        
-    }
-    
-    #ITRI_topbar .topnav .navbar-nav .nav-item .nav-link.arrow-none   {
-        padding: 0px 1.1rem !important;
-    }
 }

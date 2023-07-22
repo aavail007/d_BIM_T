@@ -945,6 +945,25 @@ select.form-control:not([size]):not([multiple]) {
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
+.navbar .bigmenu .dropdown-menu {
+    width: 100vw;
+}
+
+#ITRI_topbar .col-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right:0;
+    padding-left:0;
+}
+
+#ITRI_topbar .navbar .dropdown-menu {
+    position: absolute;
+}
+
+
+
 /* 大營慕的畫面 */
 @media screen and (min-width: 1367px) {
   /* remove the padding from the navbar so the dropdown hover state is not broken */
@@ -1848,6 +1867,10 @@ p.video-container {
     padding: 0;
     padding-bottom: 20px;
   }
+  .bid_menu .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
   .navbar .dropdown-menu {
     background-color: transparent !important;
   }
@@ -2350,7 +2373,7 @@ div.dataTables_wrapper div.dataTables_info {
 #ITRI_topbar .topnav .navbar-nav .nav-item .nav-link {
   font-size: 1rem;
   position: relative;
-  padding: 1rem 1.3rem !important;
+  padding: 1rem !important;
 }
 #ITRI_topbar .topnav .navbar-nav .bid_menu .nav-link {
   color: #444;
@@ -2479,6 +2502,7 @@ div.dataTables_wrapper div.dataTables_info {
   color: #fff;
 }
 
+
 @media (min-width: 1200px) {
   #ITRI_topbar .dropdown-menu li:hover .sub-menu {
     visibility: visible !important;
@@ -2571,6 +2595,7 @@ div.dataTables_wrapper div.dataTables_info {
     position: absolute;
     height: 60px;
     right: 10px;
+    z-index: 9999;
   }
   .bigmenu_btn a {
     margin-left: 1rem;
@@ -2624,4 +2649,35 @@ div.dataTables_wrapper div.dataTables_info {
   .ml_title {
     margin-left: 1.3rem;
   }
+}
+
+@media (max-width: 1366px) {
+    #ITRI_topbar .topnav .dropdown {
+        position: initial;
+    }   
+    #ITRI_topbar .topnav .dropdown .dropdown-menu {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 991px) {
+    #ITRI_topbar .topnav .dropdown .dropdown-menu {
+        width: auto;
+    }
+}
+
+/* 調整 menu bar Input 寬度 */
+@media (max-width: 1560px) {
+    .input_box input {
+        width: 15rem;
+    }
+
+    #ITRI_topbar .topnav .navbar-nav .nav-link {
+        font-size: 1.1rem !important;
+        
+    }
+    
+    #ITRI_topbar .topnav .navbar-nav .nav-item .nav-link.arrow-none   {
+        padding: 0px 1.1rem !important;
+    }
 }
