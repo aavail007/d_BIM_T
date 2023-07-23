@@ -26,6 +26,7 @@
  */
 ////002
 $(document).ready(function () {
+    sessionStorage.setItem("homemenulist2", fakeMenuList);// TODO:本機開發塞 menu 資料
     Home_Layout.BindTrain();
     Home_Layout.BindUI();
     Home_Layout.BindEvent();
